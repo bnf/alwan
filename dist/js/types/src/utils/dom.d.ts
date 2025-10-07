@@ -1,0 +1,18 @@
+import type { Attrs, DOMRectArray, EventBinder } from "../types";
+export declare const getBody: () => HTMLElement;
+export declare const getElements: <T extends Element>(reference: string | T, context?: Element) => T[];
+export declare const getInteractiveElements: (context: HTMLElement) => (HTMLInputElement | HTMLButtonElement)[];
+export declare const createElement: <T extends keyof HTMLElementTagNameMap>(tagName: T, className?: string, content?: string | Node | null | Array<Node | undefined | null>, attributes?: Attrs, ariaLabel?: string) => HTMLElementTagNameMap[T];
+export declare const createDivElement: (children?: Node | null | string | Array<Node | null | undefined>, className?: string, ariaLabel?: string) => HTMLDivElement;
+export declare const replaceElement: <T extends Element>(element: Element | undefined, replacement: T) => T;
+export declare const createButton: (label?: string, className?: string, content?: string, title?: string) => HTMLButtonElement;
+export declare const createSlider: (ariaLabel: string, sliderName: string, max: number, step?: number) => HTMLInputElement;
+export declare const setColorProperty: (element: HTMLElement | SVGElement, color: string) => void;
+export declare const toggleModifierClass: (element: Element, token: string, forced?: boolean) => boolean;
+export declare const translate: (element: HTMLElement, x: number, y: number) => void;
+export declare const getBoundingRectArray: (element: Element, isContentBox?: boolean) => DOMRectArray;
+export declare const createContainer: (children: Array<Node | null | undefined>) => HTMLDivElement;
+export declare const hideElement: (element: HTMLElement | SVGElement, hidden?: boolean) => "" | "none";
+export declare const getOffsetParentBoundingRect: (node: Node | null, root: ShadowRoot | null) => number[];
+export declare const addEvent: EventBinder;
+export declare const removeEvent: EventBinder;
